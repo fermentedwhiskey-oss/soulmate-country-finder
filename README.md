@@ -1,2 +1,2 @@
 # soulmate-country-finder
-Find your most compatible soulmate countries
+Find your most compatible soulmate country
