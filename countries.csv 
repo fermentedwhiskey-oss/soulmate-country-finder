@@ -1,0 +1,16 @@
+Country,PowerDistance,Individualism,Masculinity,UncertaintyAvoidance,LongTermOrientation,Indulgence,GDP_per_capita
+United States,40,91,62,46,26,68,65000
+Brazil,69,38,49,76,44,59,9000
+Japan,54,46,95,92,80,42,40000
+Germany,35,67,66,65,83,40,48000
+Canada,39,80,52,48,36,68,46000
+France,68,71,43,86,63,48,41000
+United Kingdom,35,89,66,35,51,69,43000
+Italy,50,76,70,75,61,30,35000
+Australia,36,90,61,51,31,71,55000
+India,77,48,56,40,51,26,2500
+Mexico,81,30,69,82,24,97,9500
+China,80,20,66,30,87,24,12000
+Russia,93,39,36,95,81,20,11000
+South Korea,60,18,39,85,100,29,32000
+Netherlands,38,80,14,53,67,68,52000

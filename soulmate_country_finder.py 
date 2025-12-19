@@ -1,0 +1,39 @@
+import streamlit as st
+import pandas as pd
+import numpy as np
+
+# Load the dataset
+data = pd.read_csv("countries.csv")
+
+st.title("💫 Soulmate Country Finder")
+
+st.write("""
+Find your most compatible *soulmate countries* based on cultural and economic alignment.  
+Choose your country below and hit the button!
+""")
+
+user_country = st.selectbox("Your Country:", data["Country"].unique())
+
+# Compatibility calculation
+def compatibility_scores(user_country):
+    user_row = data[data["Country"] == user_country].iloc[0]
+    numeric_cols = data.columns.drop("Country")
+    distances = []
+
+    for _, row in data.iterrows():
+        if row["Country"] != user_country:
+            dist = np.linalg.norm(row[numeric_cols] - user_row[numeric_cols])
+            distances.append((row["Country"], dist))
+
+    distances.sort(key=lambda x: x[1])
+    return distances
+
+if st.button("Find My Matches"):
+    results = compatibility_scores(user_country)
+    st.subheader("Top Matches 💖")
+    for country, dist in results[:3]:
+        st.write(f"⭐ {country}")
+
+    st.subheader("All Similarities (lower = more compatible)")
+    df_results = pd.DataFrame(results, columns=["Country", "Distance"])
+    st.dataframe(df_results)
